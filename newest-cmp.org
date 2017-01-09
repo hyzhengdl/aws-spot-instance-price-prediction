@@ -1,0 +1,55 @@
+#+OPTIONS: toc:nil
+* newest accuracy compare
+** parameters:
+lstm
+- nsteps: 20
+- ninput: 1
+- steps: 6000
+- batchsize: 256
+- hidden layer width: 32
+
+
+** accuracy details
+first 30000 items of data are used to train model,
+and the left is used to test the accuracy.
+
+- accuracy1: prediction in one hour
+- accuracy2: prediction in five minutes
+
+
+| dataset | accuracy1 | accuracy2 |
+|---------+-----------+-----------|
+| d28 a   |     0.100 |     0.027 |
+| d28 c   |     0.097 |     0.017 |
+| d28 d   |     0.089 |     0.024 |
+| d28 e   |     0.129 |     0.022 |
+| g22 a   |     0.349 |     0.185 |
+| g22 c   |     0.254 |     0.101 |
+| g22 d   |     0.341 |     0.144 |
+| g22 e   |     0.386 |     0.126 |
+| m4 a    |     0.012 |     0.048 |
+| m4 c    |     0.014 |     0.009 |
+| m4 d    |     0.046 |     0.015 |
+| m4 e    |     0.130 |     0.053 |
+| r3 a    |     0.166 |     0.035 |
+| r3 c    |     0.232 |     0.119 |
+| r3 d    |     0.258 |     0.088 |
+| r3 e    |     0.373 |     0.191 |
+| m3 a    |     0.050 |     0.079 |
+| m3 c    |     0.040 |     0.018 |
+| m3 d    |     0.047 |     0.055 |
+| m3 e    |     -     |         - |
+|---------+-----------+-----------|
+
+
+** relate details
+*** directory details
+    真实值与预测值csv文件在数据文件夹中，对应方法１，２，分别一“1-”,"2-"作为文件名前缀。
+*** model
+已将训练好的模型存入 model 文件夹中，后面可以直接使用模型进行预测。
+
+[[https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/4_Utils/save_restore_model.py][模型的加载和保存参考]]
+*** use
+如果后面月神和欢哥需要在上面进行改进，参考 [[http://tensorflow.org][tensorflow]] .
+
+[[https://fangpin.github.io/2016/10/11/tf-beginner/][一些tensorflow代码片段]]
